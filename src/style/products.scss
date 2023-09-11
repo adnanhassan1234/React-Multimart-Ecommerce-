@@ -1,0 +1,92 @@
+/* trending_products css */
+.best_selling_products,
+.arrival_products,
+.popular_category_products,
+.trending_products {
+    .product_img {
+        text-align: center;
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .title {
+        text-align: center;
+        font-weight: bold;
+        color: #081835;
+    }
+
+    .products_details {
+        padding: 5px;
+
+        .product_info {
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            h4 {
+                font-size: 19px;
+            }
+        }
+    }
+
+    .product_price_button {
+        display: flex;
+        justify-content: space-between;
+
+        i {
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .product_price {
+            color: #081835;
+            font-size: 17px;
+            font-weight: bold;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .trending_products .product_img {
+        img {
+            width: 80% !important;
+            text-align: center;
+        }
+    }
+}
+
+
+/* Add loader styles */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+}
+
+.loader-spinner {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.5s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,60 @@
+/* navbar.css */
+.navbar {
+    background-color: white;
+    padding: 14px;
+
+    .nav-link.active {
+        // background-color: #afc7f3;
+        border-radius: 2px;
+        color: #081835;
+        font-weight: 500;
+    }
+
+    .collapse {
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+
+            .nav-item {
+                margin-left: 20px;
+            }
+        }
+    }
+
+
+    .rightIon {
+
+        .cart_icon,
+        .fav_icon {
+            position: relative;
+        }
+
+        i {
+            margin-left: 15px;
+            font-size: 24px;
+            margin-top: 6px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 7%;
+            right: 8%;
+            width: 15px;
+            height: 15px;
+            background-color: #081835;
+            color: #fff;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+    }
+
+    #dropdownMenuButton1 {
+        background-color: transparent !important;
+        border: none !important;
+    }
+}

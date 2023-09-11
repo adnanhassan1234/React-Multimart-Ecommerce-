@@ -1,0 +1,41 @@
+.hero_section {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 75px;
+    background-color: #081835;
+    color: white;
+.hero_content{
+    margin-top: 40px;
+    h5{
+        font-size: 17px;
+    }
+}
+    .main_heading {
+        h5 {
+            font: 17px;
+        }
+
+        h3 {
+            font-size: 38px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .shop_btn {
+        .btn {
+            background-color: white;
+            color: #081835;
+            margin-top: 20px;
+            font-weight: 600;
+
+        }
+    }
+    .hero_img{
+        img{
+            width: 100%;
+        }
+    }
+}

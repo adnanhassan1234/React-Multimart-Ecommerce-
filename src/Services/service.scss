@@ -1,0 +1,38 @@
+.service {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    // background-color: aqua;
+
+    .service_content {
+        background-color: red;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-radius: 5px;
+        column-gap: 0.5rem;
+
+        span {
+            i {
+                background-color: #081835;
+                font-size: 2.2rem;
+                padding: 10px;
+                border-radius: 50px;
+                color: white;
+                font-weight: 400;
+            }
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #081835;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #222;
+            margin-top: 5px;
+        }
+
+    }
+}
