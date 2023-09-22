@@ -1,0 +1,9 @@
+.btn-primary{
+    background-color: #0E1E36 !important;
+    text-transform: capitalize;
+    border: none;
+    &:hover{
+        background-color: #16315e !important;
+        transition: 0.7s;
+    }
+}

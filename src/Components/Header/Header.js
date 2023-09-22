@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   MDBContainer,
   MDBNavbar,
@@ -12,6 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import "./header.scss";
 import user from "../../assets/images/user-icon.png";
+import { useSelector } from "react-redux";
 
 const nav_Link = [
   { path: "/", name: "Home" },
@@ -19,9 +20,10 @@ const nav_Link = [
   { path: "/cart", name: "Cart" },
 ];
 
-const Navbar = () => {
+const Header = () => {
   const [showBar, setShowBar] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
+  const totalQuantity = useSelector((state) => state.carts.totalQuantity);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -72,7 +74,7 @@ const Navbar = () => {
             </div>
             <div className="fav_icon mt-2">
               <i className="ri-shopping-bag-line me-2"></i>
-              <span className="badge">1</span>
+             <NavLink to="/cart"> <span className="badge">{totalQuantity}</span></NavLink>
             </div>
             {/* Dropdown */}
             <div className="dropdown">
@@ -109,4 +111,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

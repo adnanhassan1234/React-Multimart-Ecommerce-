@@ -116,3 +116,14 @@ h2 {
     display: block;
   }
 }
+// common_section scss
+.common_section{
+  background: linear-gradient(rgba(0, 0, 0, 0.662), rgba(0, 0, 0, 0.662) ),url('.././assets/images/size.jpg') no-repeat center center;
+  background-size: cover;
+  padding-block: 115px;
+}
+.common_section h2{
+ color: white;
+ font-weight: 600;
+ text-align:center;
+}

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 const Service = () => {
   return (
-    <Helmet title="Service">
+    // <Helmet title="Service">
       <section className="service">
         <div className="container">
           <div className="row">
@@ -33,7 +33,7 @@ const Service = () => {
           </div>
         </div>
       </section>
-    </Helmet>
+    // </Helmet>
   );
 };
 
