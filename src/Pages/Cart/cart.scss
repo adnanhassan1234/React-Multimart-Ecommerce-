@@ -1,30 +1,40 @@
-.cart{
-    .cart_details{
-        table{
-            tr{
-                td{
+.cart {
+    .cart_details {
+        table {
+            tr {
+                td {
                     vertical-align: middle;
                 }
             }
-            tbody{
-                img{
+
+            tbody {
+                img {
                     width: 80px;
                     height: 80px;
                     object-fit: cover;
                 }
-                i{
+
+                i {
                     cursor: pointer;
                     color: red;
                 }
             }
         }
     }
-    .sub_total{
+
+    .sub_total {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         border-radius: 4px;
         padding: 12px;
+        position: sticky;
+        top: 100px;
+        background-color: white;
+        padding: 15px;
+        z-index: 2;
+
     }
-    .btn-danger{
+
+    .btn-danger {
         background-color: rgb(233, 46, 46);
     }
 }
