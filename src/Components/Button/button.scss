@@ -6,4 +6,13 @@
         background-color: #16315e !important;
         transition: 0.7s;
     }
+  
+}
+.checkout_bg{
+    background-color: #fff !important;
+    color: #16315e !important;
+    &:hover{
+        background-color: #ddd8d8 !important;
+    color: #16315e !important;
+    }
 }

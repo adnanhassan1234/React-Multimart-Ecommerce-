@@ -15,7 +15,7 @@ const ProductCard = ({ item }) => {
       addItem({
         id,
         productName,
-        imgUrl: imgUrl,
+        imgUrl,
         price,
       })
     );

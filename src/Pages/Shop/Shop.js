@@ -7,6 +7,7 @@ import ProductList from "../../Components/UI/ProductList";
 
 const Shop = () => {
   const [productData, setProductData] = useState(products);
+  const [sortOption, setSortOption] = useState("ascending");
 
   const filterCategory = (e) => {
     const filterValue = e.target.value;
@@ -21,9 +22,19 @@ const Shop = () => {
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
-    const searchProducts = products.filter((item) => item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+    const searchProducts = products.filter((item) => item.productName.toLowerCase().includes(searchTerm.toLowerCase()));
     setProductData(searchProducts);
   }
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+    if (sortOption === "ascending") {
+      productData.sort((a, b) => a.price - b.price);
+    } else if (sortOption === "descending") {
+      productData.sort((a, b) => b.price - a.price);
+    }
+    setProductData(productData);
+  };
 
   return (
     <>
@@ -46,7 +57,7 @@ const Shop = () => {
               </div>
               <div className="col-md-3 col-sm-6 col-12">
                 <div className="filter_widget my-1">
-                  <select>
+                  <select onChange={handleSortChange}>
                     <option>Sort By</option>
                     <option value="ascending">Ascending</option>
                     <option value="descending">Descending</option>

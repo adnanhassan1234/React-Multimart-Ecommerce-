@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom"; // Import NavLink instead of Link for active link styling
 import {
   MDBContainer,
   MDBNavbar,
@@ -13,6 +13,10 @@ import {
 import "./header.scss";
 import user from "../../assets/images/user-icon.png";
 import { useSelector } from "react-redux";
+import useAuth from "../../CustomHook/useAuth";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase.config";
+import { toast } from "react-toastify";
 
 const nav_Link = [
   { path: "/", name: "Home" },
@@ -21,6 +25,8 @@ const nav_Link = [
 ];
 
 const Header = () => {
+  const { currUser } = useAuth();
+  const navigate = useNavigate();
   const [showBar, setShowBar] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
   const totalQuantity = useSelector((state) => state.carts.totalQuantity);
@@ -28,6 +34,18 @@ const Header = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
+
+  const authLogout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success('Logged out');
+        navigate('/');
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+  
 
   return (
     <MDBNavbar navbar expand="lg" fixed="top">
@@ -52,7 +70,7 @@ const Header = () => {
             {nav_Link?.map((link, ind) => {
               return (
                 <MDBNavbarItem key={ind}>
-                  <Link
+                  <NavLink
                     exact
                     to={link.path}
                     className={`nav-link ${
@@ -61,7 +79,7 @@ const Header = () => {
                     onClick={() => handleLinkClick(link.path)}
                   >
                     {link.name}
-                  </Link>
+                  </NavLink>
                 </MDBNavbarItem>
               );
             })}
@@ -74,12 +92,14 @@ const Header = () => {
             </div>
             <div className="fav_icon mt-2">
               <i className="ri-shopping-bag-line me-2"></i>
-             <NavLink to="/cart"> <span className="badge">{totalQuantity}</span></NavLink>
+              <NavLink to="/cart">
+                <span className="badge">{totalQuantity}</span>
+              </NavLink>
             </div>
             {/* Dropdown */}
             <div className="dropdown">
               <img
-                src={user}
+                src={currUser ? currUser.photoURL : user}
                 alt="user_img"
                 width={60}
                 className="btn btn-secondary dropdown-toggle"
@@ -87,21 +107,29 @@ const Header = () => {
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                style={{ borderRadius: "50px" }}
               />
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton1"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Login
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Sign up
-                  </a>
-                </li>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {currUser ? (
+                  <li>
+                    <a className="dropdown-item" href="#" onClick={authLogout}>
+                      Logout
+                    </a>
+                  </li>
+                ) : (
+                  <>
+                    <li>
+                      <NavLink className="dropdown-item" to="/login">
+                        Login
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="signup">
+                        Sign up
+                      </NavLink>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>

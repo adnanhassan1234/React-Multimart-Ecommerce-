@@ -2,10 +2,10 @@ import React from 'react';
 import './button.scss';
 import { motion } from 'framer-motion';
 
-const Button = ({title ,submit, width}) => {
+const Button = ({title ,submit, width, height, bgColor}) => {
     return (
         <>
-            <motion.button whileTap={{scale: 1.3}} type={submit} className='btn btn-primary' style={{width:width}}>{title}</motion.button>
+            <motion.button whileTap={{scale: 1.3}} type={submit} className={`btn btn-primary ${bgColor}`} style={{width:width, height:height}}>{title}</motion.button>
         </>
     );
 };

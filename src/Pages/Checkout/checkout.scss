@@ -1,0 +1,27 @@
+.checkout_form{
+    .billing_info{
+        .form_group{
+            input{
+                height: 50px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+               
+            }
+        }
+    }
+    .checkout_cart{
+        background-color: #0E1E36;
+        border-radius: 4px;
+        padding: 12px;
+        position: sticky;
+        top: 100px;
+        color: white;
+        padding: 15px;
+        z-index: 2;
+        span{
+            float: right;
+        }
+        h6{
+            line-height: 44px;
+        }
+    }
+}
