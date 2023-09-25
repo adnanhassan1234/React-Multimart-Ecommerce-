@@ -88,7 +88,7 @@ const Checkout = () => {
                   Total Cost: <span>${totalAmount + 5}</span>
                 </h5>
                 <div className="shopping_btn my-3">
-                  <Link to="/login">
+                  <Link to="/checkout">
                     <Button
                       title="place an order"
                       width="100%"
