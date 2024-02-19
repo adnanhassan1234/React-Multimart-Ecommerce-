@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
             <h4 className="text-light footer-head">Multimart</h4>
             <p className="mt-4">
-              Ecommerce is a method of buying and selling goods and services online. The definition of ecommerce business can also include tactics like affiliate marketing. You can use ecommerce channels such as your own website.
+              Ecommerce is a method of buying and selling goods and services online. The definition of ecommerce business can also include tactics like affiliate marketing. You can use ecommerce channels such as your own websites.
             </p>
           </div>
 
